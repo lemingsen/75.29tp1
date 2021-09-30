@@ -21,7 +21,8 @@ def karatsuba(x, y):
 
     x1, x0 = split_at(x, n)
     y1, y0 = split_at(y, n)
-    print(f'karatsuba({x},{y}): m:{m} n:{n} x1:{x1} x0:{x0} y1:{y1} y0:{y0} calls karatsuba({x0},{y0}), karatsuba({x1+x0},{y1+y0}), karatsuba({x1},{y1})')
+    print(f'karatsuba({x},{y}): m:{m} n:{n} x1:{x1} x0:{x0} y1:{y1} y0:{y0} \
+        calls karatsuba({x0},{y0}), karatsuba({x1+x0},{y1+y0}), karatsuba({x1},{y1})')
     z0, mults0, sums0, iterations0 = karatsuba(x0, y0)
     z1, mults1, sums1, iterations1 = karatsuba(x1 + x0, y1 + y0)
     z2, mults2, sums2, iterations2 = karatsuba(x1, y1)
@@ -60,10 +61,12 @@ def traditional_multiplication(x, y):
 
 def main():
     result, mults, sums, iterations = karatsuba(73514116, 28986655)
-    print(f'Karatsuba: result:{result} multiplications:{mults} sums:{sums} iterations:{iterations}')
+    print(f'Karatsuba: result:{result} multiplications:{mults} \
+         sums:{sums} iterations:{iterations}')
 
     result, mults, sums, iterations = traditional_multiplication(73514116, 28986655)
-    print(f'Traditional: result:{result} multiplications:{mults} sums:{sums} iterations:{iterations}')
+    print(f'Traditional: result:{result} multiplications:{mults} \
+        sums:{sums} iterations:{iterations}')
 
 
 
